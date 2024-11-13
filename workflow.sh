@@ -68,20 +68,20 @@ echo "Finished pVAAST results"
 
 echo "Creating pVAAST csv files"
 # Creates csv files based on .vaast results 
-python3 /lab01/Projects/VAAST_Projects/CommonCodes/pVaastParser_LOD.py /lab01/Projects/Mudassir_Projects/linkage/"$var_results"/SNP_Analysis/Results/pVAAST/LI_ASD/dom/LI_ASD_dom.vaast /lab01/Projects/Mudassir_Projects/linkage/"$var_results"/SNP_Analysis/Results/pVAAST/LI_ASD/dom/LI_ASD_dom.csv
-python3 /lab01/Projects/VAAST_Projects/CommonCodes/pVaastParser_LOD.py /lab01/Projects/Mudassir_Projects/linkage/"$var_results"/SNP_Analysis/Results/pVAAST/LI_ASD/rec/LI_ASD_rec.vaast /lab01/Projects/Mudassir_Projects/linkage/"$var_results"/SNP_Analysis/Results/pVAAST/LI_ASD/rec/LI_ASD_rec.csv
-python3 /lab01/Projects/VAAST_Projects/CommonCodes/pVaastParser_LOD.py /lab01/Projects/Mudassir_Projects/linkage/"$var_results"/SNP_Analysis/Results/pVAAST/RI_ASD/dom/RI_ASD_dom.vaast /lab01/Projects/Mudassir_Projects/linkage/"$var_results"/SNP_Analysis/Results/pVAAST/RI_ASD/dom/RI_ASD_dom.csv
-python3 /lab01/Projects/VAAST_Projects/CommonCodes/pVaastParser_LOD.py /lab01/Projects/Mudassir_Projects/linkage/"$var_results"/SNP_Analysis/Results/pVAAST/RI_ASD/rec/RI_ASD_rec.vaast /lab01/Projects/Mudassir_Projects/linkage/"$var_results"/SNP_Analysis/Results/pVAAST/RI_ASD/rec/RI_ASD_rec.csv
+python3 /lab01/Projects/VAAST_Projects/CommonCodes/pVaastParser_LOD.py "$dir_path"/"$var_results"/SNP_Analysis/Results/pVAAST/LI_ASD/dom/LI_ASD_dom.vaast "$dir_path"/"$var_results"/SNP_Analysis/Results/pVAAST/LI_ASD/dom/LI_ASD_dom.csv
+python3 /lab01/Projects/VAAST_Projects/CommonCodes/pVaastParser_LOD.py "$dir_path"/"$var_results"/SNP_Analysis/Results/pVAAST/LI_ASD/rec/LI_ASD_rec.vaast "$dir_path"/"$var_results"/SNP_Analysis/Results/pVAAST/LI_ASD/rec/LI_ASD_rec.csv
+python3 /lab01/Projects/VAAST_Projects/CommonCodes/pVaastParser_LOD.py "$dir_path"/"$var_results"/SNP_Analysis/Results/pVAAST/RI_ASD/dom/RI_ASD_dom.vaast "$dir_path"/"$var_results"/SNP_Analysis/Results/pVAAST/RI_ASD/dom/RI_ASD_dom.csv
+python3 /lab01/Projects/VAAST_Projects/CommonCodes/pVaastParser_LOD.py "$dir_path"/"$var_results"/SNP_Analysis/Results/pVAAST/RI_ASD/rec/RI_ASD_rec.vaast "$dir_path"/"$var_results"/SNP_Analysis/Results/pVAAST/RI_ASD/rec/RI_ASD_rec.csv
 
 echo "Finished creating csv files"
 
 # SNP Analysis
-python /lab01/Projects/Mudassir_Projects/linkage/Variant_Analysis/SNP_Analysis/Code/LI_SNP_analysis.py "$full_path"
-python /lab01/Projects/Mudassir_Projects/linkage/Variant_Analysis/SNP_Analysis/Code/RI_SNP_analysis.py "$full_path"
-python /lab01/Projects/Mudassir_Projects/linkage/Variant_Analysis/SNP_Analysis/Code/LI_dom_seg_parse.py "$full_path"
-python /lab01/Projects/Mudassir_Projects/linkage/Variant_Analysis/SNP_Analysis/Code/LI_rec_seg_parse.py "$full_path"
-python /lab01/Projects/Mudassir_Projects/linkage/Variant_Analysis/SNP_Analysis/Code/RI_dom_seg_parse.py "$full_path"
-python /lab01/Projects/Mudassir_Projects/linkage/Variant_Analysis/SNP_Analysis/Code/RI_rec_seg_parse.py "$full_path"
+python "$dir_path"/SNP_Analysis/LI_SNP_analysis.py "$full_path"
+python "$dir_path"/SNP_Analysis/RI_SNP_analysis.py "$full_path"
+python "$dir_path"/SNP_Analysis/LI_dom_seg_parse.py "$full_path"
+python "$dir_path"/SNP_Analysis/LI_rec_seg_parse.py "$full_path"
+python "$dir_path"/SNP_Analysis/RI_dom_seg_parse.py "$full_path"
+python "$dir_path"/SNP_Analysis/RI_rec_seg_parse.py "$full_path"
 
 echo "Finished SNP Analysis"
 
@@ -90,10 +90,10 @@ mkdir "$var_results"/CNV_Analysis/
 mkdir "$var_results"/CNV_Analysis/Results/
 
 # CNV Analysis
-python /lab01/Projects/Mudassir_Projects/linkage/Variant_Analysis/CNV_Analysis/LI_CNV_analysis.py "$full_path"
-python /lab01/Projects/Mudassir_Projects/linkage/Variant_Analysis/CNV_Analysis/LI_CNV_fam.py "$full_path"
-python /lab01/Projects/Mudassir_Projects/linkage/Variant_Analysis/CNV_Analysis/RI_CNV_analysis.py "$full_path"
-python /lab01/Projects/Mudassir_Projects/linkage/Variant_Analysis/CNV_Analysis/RI_CNV_fam.py "$full_path"
+python "$dir_path"/CNV_Analysis/LI_CNV_analysis.py "$full_path"
+python "$dir_path"/CNV_Analysis/LI_CNV_fam.py "$full_path"
+python "$dir_path"/CNV_Analysis/RI_CNV_analysis.py "$full_path"
+python "$dir_path"/CNV_Analysis/RI_CNV_fam.py "$full_path"
 
 echo "Finished CNV Analysis"
 
@@ -102,27 +102,27 @@ mkdir "$var_results"/SV_Analysis/
 mkdir "$var_results"/SV_Analysis/Results/
 
 # SV Analysis
-python /lab01/Projects/Mudassir_Projects/linkage/Variant_Analysis/SV_Analysis/LI_SV_analysis.py "$full_path"
-python /lab01/Projects/Mudassir_Projects/linkage/Variant_Analysis/SV_Analysis/RI_SV_analysis.py "$full_path"
+python "$dir_path"/SV_Analysis/LI_SV_analysis.py "$full_path"
+python "$dir_path"/SV_Analysis/RI_SV_analysis.py "$full_path"
 
 # SV Benign Analysis
-python /lab01/Projects/Mudassir_Projects/linkage/Variant_Analysis/SV_Analysis/LI_benign_filt.py "$full_path"
-python /lab01/Projects/Mudassir_Projects/linkage/Variant_Analysis/SV_Analysis/LI_SV_benign_genes.py "$full_path"
-python /lab01/Projects/Mudassir_Projects/linkage/Variant_Analysis/SV_Analysis/RI_benign_filt.py "$full_path"
-python /lab01/Projects/Mudassir_Projects/linkage/Variant_Analysis/SV_Analysis/RI_SV_benign_genes.py "$full_path"
+python "$dir_path"/SV_Analysis/LI_benign_filt.py "$full_path"
+python "$dir_path"/SV_Analysis/LI_SV_benign_genes.py "$full_path"
+python "$dir_path"/SV_Analysis/RI_benign_filt.py "$full_path"
+python "$dir_path"/SV_Analysis/RI_SV_benign_genes.py "$full_path"
 
 echo "Finished SV Analysis"
 
 #mkdir "$var_results"/Gene_Analysis/
 
 # Gene Table
-python /lab01/Projects/Mudassir_Projects/linkage/Variant_Analysis/Gene_Analysis/LI_gene_table.py "$full_path"
-python /lab01/Projects/Mudassir_Projects/linkage/Variant_Analysis/Gene_Analysis/RI_gene_table.py "$full_path"
+python "$dir_path"/Gene_Analysis/LI_gene_table.py "$full_path"
+python "$dir_path"/Gene_Analysis/RI_gene_table.py "$full_path"
 
 echo "Finished Gene Analysis"
 
 # Gene Selection
-python /lab01/Projects/Mudassir_Projects/linkage/Variant_Analysis/Gene_Analysis/LI_gene_select.py "$full_path"
-python /lab01/Projects/Mudassir_Projects/linkage/Variant_Analysis/Gene_Analysis/RI_gene_select.py "$full_path"
+python "$dir_path"/Gene_Analysis/LI_gene_select.py "$full_path"
+python "$dir_path"/Gene_Analysis/RI_gene_select.py "$full_path"
 
 

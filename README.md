@@ -3,4 +3,4 @@ This repository contains the code and description for the paper "Narrow Versus B
 
 ![alt text][logo]
 
-[logo]: "Analysis workflow"
+[logo]: https://github.com/mklodi1/linkage-pipeline/blob/main/Linkage_Analysis_Workflow.png "Analysis workflow"

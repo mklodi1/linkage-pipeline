@@ -12,7 +12,7 @@ The workflow.sh script will run the entire pipeline from start to finish, with t
 
 ### Code (Pedigree and CTL File Generation)
 #### Objective
-Generates pedigree files following dominant and recessive inheritance patterns for each given family. After this, CTL files are generated for each of the four analyses (LI_dom, LI_rec, RI_dom, RI_rec) using the generated corresponding pedigree files. 
+pVAAST requires pedigree files for each family and a CTL file for each run. Generates pedigree files following dominant and recessive inheritance patterns for each given family. After this, CTL files are generated for each of the four analyses (LI_dom, LI_rec, RI_dom, RI_rec) using the generated corresponding pedigree files. 
 #### Files
 1. LI_ped_dom.py - generates family pedigree files focusing on LI* patients following dominant inheritance model
 

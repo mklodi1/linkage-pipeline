@@ -26,6 +26,8 @@ rm "$dir_path"/Pedigree/dom/RI_ASD/fam_1009_RI_ASD_dom.ped
 rm "$dir_path"/Pedigree/dom/LI_ASD/fam_1009_LI_ASD_dom.ped 
 rm "$dir_path"/Pedigree/dom/LI_ASD/fam_2008_LI_ASD_dom.ped  
 
+mkdir "$dir_path"/CTL/
+
 # CTL File Generation
 python "$dir_path"/Code/LI_dom_ctl_gen.py
 python "$dir_path"/Code/LI_rec_ctl_gen.py
@@ -48,19 +50,19 @@ mkdir "$var_results"/SNP_Analysis/Results/pVAAST/RI_ASD/rec/
 # Execute pVAAST Command
 echo "Running LI_ASD_dom pVAAST analysis"
 
-/lab01/Tools/VAAST_3.0/bin/vaast_tools/../VAAST -m pvaast -o "$dir_path"/"$var_results"/SNP_Analysis/Results/pVAAST/LI_ASD/dom/LI_ASD_dom -pv_control /lab01/Projects/Mudassir_Projects/linkage/CTL/LI_ASD_dom.ctl -region /nfs/xing_lab/brz_vcf/VAAST_JUN_3_2019/LI.bed   /lab01/Projects/VAAST_Projects/Data/Features/refGene_hg19.gff3 /nfs/xing_lab/brz_vcf/VAAST_JUN_3_2019/bg_gtex.cdr -gw 1e6 -min_suc 50 -p 22 -o /lab01/Projects/Mudassir_Projects/linkage/"$var_results"/SNP_Analysis/Results/pVAAST/LI_ASD/dom/LI_ASD_dom -max_time 300 &> "$var_results"_LI_ASD_dom.txt &
+/lab01/Tools/VAAST_3.0/bin/vaast_tools/../VAAST -m pvaast -o "$dir_path"/"$var_results"/SNP_Analysis/Results/pVAAST/LI_ASD/dom/LI_ASD_dom -pv_control "$dir_path"/CTL/LI_ASD_dom.ctl -region /nfs/xing_lab/brz_vcf/VAAST_JUN_3_2019/LI.bed   /lab01/Projects/VAAST_Projects/Data/Features/refGene_hg19.gff3 /nfs/xing_lab/brz_vcf/VAAST_JUN_3_2019/bg_gtex.cdr -gw 1e6 -min_suc 50 -p 22 -o "$dir_path"/"$var_results"/SNP_Analysis/Results/pVAAST/LI_ASD/dom/LI_ASD_dom -max_time 300 &> "$var_results"_LI_ASD_dom.txt &
 
 echo "Running LI_ASD_rec pVAAST analysis"
 
-/lab01/Tools/VAAST_3.0/bin/vaast_tools/../VAAST -m pvaast -o "$dir_path"/"$var_results"/SNP_Analysis/Results/pVAAST/LI_ASD/rec/LI_ASD_rec -pv_control /lab01/Projects/Mudassir_Projects/linkage/CTL/LI_ASD_rec.ctl -region /nfs/xing_lab/brz_vcf/VAAST_JUN_3_2019/LI.bed   /lab01/Projects/VAAST_Projects/Data/Features/refGene_hg19.gff3 /nfs/xing_lab/brz_vcf/VAAST_JUN_3_2019/bg_gtex.cdr -gw 1e6 -min_suc 50 -p 22 -o /lab01/Projects/Mudassir_Projects/linkage/"$var_results"/SNP_Analysis/Results/pVAAST/LI_ASD/rec/LI_ASD_rec -max_time 300 &> "$var_results"_LI_ASD_rec.txt &
+/lab01/Tools/VAAST_3.0/bin/vaast_tools/../VAAST -m pvaast -o "$dir_path"/"$var_results"/SNP_Analysis/Results/pVAAST/LI_ASD/rec/LI_ASD_rec -pv_control "$dir_path"/CTL/LI_ASD_rec.ctl -region /nfs/xing_lab/brz_vcf/VAAST_JUN_3_2019/LI.bed   /lab01/Projects/VAAST_Projects/Data/Features/refGene_hg19.gff3 /nfs/xing_lab/brz_vcf/VAAST_JUN_3_2019/bg_gtex.cdr -gw 1e6 -min_suc 50 -p 22 -o "$dir_path"/"$var_results"/SNP_Analysis/Results/pVAAST/LI_ASD/rec/LI_ASD_rec -max_time 300 &> "$var_results"_LI_ASD_rec.txt &
 
 echo "Running RI_ASD_dom pVAAST analysis"
 
-/lab01/Tools/VAAST_3.0/bin/vaast_tools/../VAAST -m pvaast -o "$dir_path"/"$var_results"/SNP_Analysis/Results/pVAAST/RI_ASD/dom/RI_ASD_dom -pv_control /lab01/Projects/Mudassir_Projects/linkage/CTL/RI_ASD_dom.ctl -region /nfs/xing_lab/brz_vcf/VAAST_JUN_3_2019/RI.bed   /lab01/Projects/VAAST_Projects/Data/Features/refGene_hg19.gff3 /nfs/xing_lab/brz_vcf/VAAST_JUN_3_2019/bg_gtex.cdr -gw 1e6 -min_suc 50 -p 22 -o /lab01/Projects/Mudassir_Projects/linkage/"$var_results"/SNP_Analysis/Results/pVAAST/RI_ASD/dom/RI_ASD_dom -max_time 300 &> "$var_results"_RI_ASD_dom.txt &
+/lab01/Tools/VAAST_3.0/bin/vaast_tools/../VAAST -m pvaast -o "$dir_path"/"$var_results"/SNP_Analysis/Results/pVAAST/RI_ASD/dom/RI_ASD_dom -pv_control "$dir_path"/CTL/RI_ASD_dom.ctl -region /nfs/xing_lab/brz_vcf/VAAST_JUN_3_2019/RI.bed   /lab01/Projects/VAAST_Projects/Data/Features/refGene_hg19.gff3 /nfs/xing_lab/brz_vcf/VAAST_JUN_3_2019/bg_gtex.cdr -gw 1e6 -min_suc 50 -p 22 -o "$dir_path"/"$var_results"/SNP_Analysis/Results/pVAAST/RI_ASD/dom/RI_ASD_dom -max_time 300 &> "$var_results"_RI_ASD_dom.txt &
 
 echo "Running RI_ASD_rec pVAAST analysis"
 
-/lab01/Tools/VAAST_3.0/bin/vaast_tools/../VAAST -m pvaast -o "$dir_path"/"$var_results"/SNP_Analysis/Results/pVAAST/RI_ASD/rec/RI_ASD_rec -pv_control /lab01/Projects/Mudassir_Projects/linkage/CTL/RI_ASD_rec.ctl -region /nfs/xing_lab/brz_vcf/VAAST_JUN_3_2019/RI.bed   /lab01/Projects/VAAST_Projects/Data/Features/refGene_hg19.gff3 /nfs/xing_lab/brz_vcf/VAAST_JUN_3_2019/bg_gtex.cdr -gw 1e6 -min_suc 50 -p 22 -o /lab01/Projects/Mudassir_Projects/linkage/"$var_results"/SNP_Analysis/Results/pVAAST/RI_ASD/rec/RI_ASD_rec -max_time 300 &> "$var_results"_RI_ASD_rec.txt &
+/lab01/Tools/VAAST_3.0/bin/vaast_tools/../VAAST -m pvaast -o "$dir_path"/"$var_results"/SNP_Analysis/Results/pVAAST/RI_ASD/rec/RI_ASD_rec -pv_control "$dir_path"/CTL/RI_ASD_rec.ctl -region /nfs/xing_lab/brz_vcf/VAAST_JUN_3_2019/RI.bed   /lab01/Projects/VAAST_Projects/Data/Features/refGene_hg19.gff3 /nfs/xing_lab/brz_vcf/VAAST_JUN_3_2019/bg_gtex.cdr -gw 1e6 -min_suc 50 -p 22 -o "$dir_path"/"$var_results"/SNP_Analysis/Results/pVAAST/RI_ASD/rec/RI_ASD_rec -max_time 300 &> "$var_results"_RI_ASD_rec.txt &
 
 wait
 
